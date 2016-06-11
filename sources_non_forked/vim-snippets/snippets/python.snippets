@@ -240,3 +240,26 @@ snippet kwargs
 	**kwargs${1:,}${0}
 snippet akw
 	*args, **kwargs${1:,}${0}
+
+snippet tchs
+	${1:name} = (
+		('${2:key}', '${3:title}'),
+	)
+
+snippet tchsm
+	${1:name} = (
+		(u'${2:key}', u'${3:title}'),
+	)
+
+snippet sah
+	from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
+	from sqlalchemy.ext.declarative import declarative_base, declared_attr
+	from sqlalchemy.orm import relationship
+
+snippet sam
+	class Model(Base):
+		foreign_id = Column(Integer, ForeignKey('foreign_model.id'), nullable=False)
+		foreign = relationship('Foreign', backref='models') 
+		str_field = Column(String(200), nullable=False)
+		int_field = Column(Integer, nullable=False)
+		pub_date = Column(DateTime(), nullable=False)
